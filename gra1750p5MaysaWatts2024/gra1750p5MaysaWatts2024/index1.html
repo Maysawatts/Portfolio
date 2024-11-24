@@ -1,0 +1,321 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+	<style>
+		body{
+			margin:0;
+			background: linear-gradient(135deg,#4b2e17,#8b4513);
+			display: flex;
+			justify-content: center;
+			font-family: Arial, sans-serif;
+			color: #4b2e17;
+		}
+		wrapper{
+			width: 850px;
+			background-color: #fff;
+			display: block;
+			margin: 20px auto;
+			border-radius: 10px;
+			box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+			overflow: hidden;
+			transition: transform 0.3s ease;
+		}
+		wrapper:hover{
+			transform: scale(1.02);
+		}
+		wrapper img{
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+		}
+		header{
+			background: linear-gradient(45deg,#d2691e,#f4a460);
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			font-size: 30px;
+			font-weight: bold;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+		nav{
+			display: flex;
+			justify-content: space-around;
+			background-color: #f4a460;
+			padding: 10px 0;
+			border-radius: 0 0 10px 10px;
+			transition: background 0.3s ease;
+		}
+		nav a{
+			color: #fff;
+			text-decoration: none;
+			font-weight: bold;
+			position: relative;
+		}
+		nav a::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #fff;
+			left: 0;
+			bottom: -4px;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+		nav a:hover::after{
+			opacity: 1;
+		}
+		.hero{
+			text-align: center;
+			margin: 20px;
+		}
+		.hero img{
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		}
+		.hero h1{
+			font-size: 32px;
+			margin-top: 10px;
+			color: #8b4513;
+		}
+		.cta-btn{
+			display: inline-block;
+			padding: 10px 20px;
+			background-color: #d2691e;
+			color: #fff;
+			border-radius: 8px;
+			text-decoration: none;
+			font-weight: bold;
+			margin-top: 10px;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+			transition: all 0.3s ease;
+		}
+		.cta-btn:hover{
+			background-color: #a0522d;
+			box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+			transform: translateY(-2px);
+		}
+		.promo{
+			background-color: #fff3e6;
+			border-radius: 10px;
+			padding: 15px;
+			margin: 20px;
+			text-align: center;
+			animation: slide-in 1s ease forwards;
+		}
+		@keyframes slide-in{
+			from {transform: translateY(20px);opacity: 0;}
+			to{transform: translateY(0);opacity: 1;}
+		}
+		.promo h2{
+			color: #d2691e;
+		}
+		.promo p{
+			color: #4b2e17;
+			font-weight: bold;
+		}
+		.featured, .menu, .testimonials, .about, .newsletter{
+			margin: 20px;
+			padding: 15px;
+			border-radius: 10px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		.featured:hover,.menu:hover,.testimonials:hover,.about:hover,.newsletter:hover{
+			transform: scale(1.01);
+			box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+		}
+		.featured h2, .menu h2, .testimonials h2, .about h2, .newsletter h2{
+			text-align: center;
+			color: #8b4513;
+			font-size: 24px;
+			padding-bottom: 5px;
+			border-bottom: 2px solid #d2691e;
+			margin-bottom: 10px;
+		}
+		.menu-item{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 10px 0;
+		}
+		.menu-item img{
+			width: 60px;
+			height: 60px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		}
+		.menu-item div{
+			flex-grow: 1;
+			margin-left: 10px;
+			color: #4b2e17;
+		}
+		.order-btn{
+			display: inline-block;
+			background-color: #d2691e;
+			color: #fff;
+			padding: 8px 12px;
+			border-radius: 8px;
+			text-decoration: none;
+			font-size: 15px;
+			transition: background 0.3s ease;
+		}
+		.order-btn:hover{
+			background-color: #a0522d;
+			transform: scale(1.1);
+		}
+		.testimonial-item{
+			margin: 10px 0;
+			text-align: center;
+			font-size: 15px;
+		}
+		.testimonial-item p{
+			font-style: italic;
+			color: #4b2e17;
+		}
+		.testimonial-item span{
+			display: block;
+			margin-top: 5px;
+			font-weight: bold;
+			color: #8b4513;
+		}
+		.about p{
+			color: #4b2e17;
+			line-height: 1.6;
+		}
+		.newsletter p{
+			color: #4b2e17;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+		.newsletter input[type="email"]{
+			width: 80%;
+			padding: 8px;
+			border-radius: 8px;
+			border: 1px solid #d2691e;
+			transition: border-color 0.3s ease;
+		}
+		.newsletter input[type="email"]:focus{
+			border-color: #a0522d;
+			outline: none;
+		}
+		.newsletter button {
+			padding: 10px 20px;
+			background-color: #d2691e;
+			color: #fff;
+			border-radius: 8px;
+			border: none;
+			font-weight: bold;
+			margin-top: 10px;
+			cursor: pointer;
+			transition: background 0.3s ease;
+		}
+		.newsletter button:hover{
+			background-color: #a0522d;
+		}
+		footer{
+			text-align: center;
+			padding: 10px;
+			background-color: #f4a460;
+			color: #fff;
+			font-size: 15px;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+		}
+		footer a{
+			color: #ffe4b5;
+			text-decoration: none;
+		}
+		
+		
+	</style>
+</head>
+
+<body>
+	<wrapper>
+	<img src="Sweet-Batch-Logo.jpg" alt="Logo" height="200">	
+	<header>Sweet Batch Cookie Shop</header>
+		<nav>
+		<a href="#home">Home</a>
+		<a href="#menu">Menu</a>
+		<a href="#order">Order</a>
+		<a href="#contact">Contact</a>	
+		</nav>
+	<section class="hero" id="home">
+	<img src="cookies.jpg" alt="Cookies" height="300">
+	<h1>Freshly Baked Every Day!</h1>
+	<p>Try our rich, gooey double chunky cookies, a fan favorite!</p>
+	<a href="#menu" class="cta-btn">Browse Our Cookies</a>
+	</section>
+	<section class="promo">
+		<h2>Special Offer!</h2>
+		<p>Buy 3, Get 1 Free - Limited Time Only!</p>
+		</section>
+		<section class="featured">
+			<h2>Cookies of the Month: Fall Edition</h2>
+			<img src="FallCookie.jpg" alt="Fall Cookies" height="300">
+			<p>Indulge in our special assortment of Fall Cookies, packed with deep flavors of ginger, nutmeg, clove, cinnamon and molasses — because pumpkin isn't the only fall flavor to love. </p>
+			<a href="#order" class="order-btn">Order Now</a>
+		</section>
+			<section class="menu" id="menu">
+			<h2>Our Cookie Selection</h2>
+		<div class="menu-item">
+		<img src="chocolatechip.jpg" alt="Chocolate Chip" height="300">
+			<div>
+		<p>Chocolate Chip</p>
+		<p>$1.50</p>
+				</div>
+			<a href="#order" class="order-btn">Order</a>
+		</div>
+		<div class="menu-item">
+		<img src="OatmealRaisin.jpg" alt="Oatmeal Raisin" height="300">
+			<div>
+			<p>Oatmeal Raisin</p>
+				<p>$1.20</p>
+			</div>
+			<a href="#order" class="order-btn">Order</a>
+		</div>
+		<div class="menu-item">
+		<img src="DarkChocolate.jpg" alt="Dark Chocolate" height="300">
+			<div>
+			<p>Dark Chocolate</p>
+				<p>$1.30</p>
+			</div>
+			<a href="#order" class="order-btn">Order</a>
+		</div>
+		</section>
+		<section class="testimonials">
+			<h2>What Our Customers Say</h2>
+			<div class="testimonial-item">
+			<p>"Best cookies I've ever had! Always fresh and delicious."</p>
+				<span>- Sarah J.</span>
+			</div>
+			<div class="testimonial-item">
+			<p>"Perfectly baked and so many flavors to choose from."</p>
+				<span>- Mike R.</span>
+			</div>
+		</section>
+		<section class="about" id="about">
+		<h2>About Us</h2>
+			<p>We are family-owned cookie shop dedicated to bringing you the best homemade cookies with all-natural ingredients. Baked with love and crafted for every cookie lover out there!</p>
+		</section>
+		<section class="newsletter">
+		<h2>Stay Updated</h2>
+			<p>Sign up for our newsletter to get the latest news and exclusive deals.</p>
+			<form>
+			<input type="email" placeholder="Your Email">
+				<button type="submit">Subscribe</button>
+			</form>
+		</section>
+		<footer>
+		<p>&copy;2024 Sweet Batch Cookie Shop</p>
+			<p>Follow us on <a href="#">Instagram</a></p>
+			<p>© 2024, Maysa Watts. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+		</footer>
+	</wrapper>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bebas+Neue&family=Berkshire+Swash&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lobster&family=Mountains+of+Christmas:wght@400;700&family=Oswald:wght@200..700&family=Pinyon+Script&display=swap" rel="stylesheet">	
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Bebas+Neue&family=Berkshire+Swash&family=Lobster&family=Mountains+of+Christmas:wght@400;700&family=Oswald:wght@200..700&family=Pinyon+Script&display=swap" rel="stylesheet">	
+	<style>
+		body{
+			margin:0;
+			background: linear-gradient(135deg,#4b2e17,#8b4513);			font-family: 'Lato', cursive;
+			color: #4b2e17;
+			font-size: 16px;
+			display: flex;
+			justify-content: center;
+		}
+		wrapper{
+			width: 100%;
+			max-width: 850px;
+			background-color: #fff;
+			margin: 20px auto;
+			border-radius: 10px;
+			box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+			overflow: hidden;
+			transition: transform 0.3s ease;
+		}
+		wrapper:hover{
+			transform: scale(1.02);
+		}
+		wrapper img{
+			width: 100%;
+			height: auto;
+			border-radius: 10px;
+		}
+		header{
+			background: linear-gradient(45deg,#d2691e,#f4a460);
+			color: #fff;
+			padding: 20px;
+			text-align: center;
+			font-size: 50px;
+			font-family: 'Berkshire Swash', cursive;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+		.banner{
+			width: 100%;
+			background: #d2691e;
+			color: #fff;
+			text-align: center;
+			padding: 10px 0;
+			font-size: 30px;
+			font-family: 'Berkshire Swash', cursive;
+			overflow: hidden;
+			position: relative;
+			height: 50px;
+			white-space: nowrap;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+			border-bottom: 2px solid #a0522d;
+		}
+		.banner span{
+			display: inline-block;
+			white-space: nowrap;
+			animation: scroll 20s linear infinite;
+		}
+		@keyframes scroll{
+			from {
+				transform: translateX(100);
+			}
+			to {
+				transform: translateX(-100%);
+			}
+		}
+		.photo-gallery-banner{
+			width: 100%;
+			overflow: hidden;
+			background-color: #fef5e7;
+			padding: 10px 0;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+			border-bottom: 2px solid #a0522d;
+			position: relative;
+		}
+		.gallery{
+			display: flex;
+			gap: 10px;
+			width: calc(200%);
+			animation: gallery-scroll-animation 20s linear infinite;
+		}
+		.gallery img{
+			height: 150px;
+			border-radius: 8px;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+		}
+		@keyframes gallery-scroll-animation{
+			from {
+				transform: translateX(0);
+			}
+			to {
+				transform: translateX(-100%);
+			}
+		}
+		nav{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #f4a460;
+			padding: 20px 0;
+			gap: 15px;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+			transition: background 0.3s ease;
+			border-radius: 0 0 10px 10px;
+		}
+		nav a{
+			color: #fff;
+			text-decoration: none;
+			font-family: 'Berkshire Swash', cursive;
+			font-size: 36px;
+			padding: 12px 20px;
+			background-color: #d2691e;
+			border-radius: 8px;
+			transition: all 0.3s ease;
+		}
+	nav a:hover {
+		background-color: #a0522d;
+		transform: scale(1.1);
+	}
+		nav a::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #fff;
+			left: 0;
+			bottom: -4px;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+		nav a:hover::after{
+			opacity: 1;
+		}
+		.hero{
+			text-align: center;
+			margin: 20px;
+		}
+		.hero img{
+			border-radius: 10px;
+			max-width: 100%;
+			height: auto;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		}
+	
+		.hero h1{
+			font-size: 45px;
+			margin-top: 10px;
+			color: #8b4513;
+			font-family: 'Berkshire Swash', cursive;
+		}
+		.hero p{
+			font-size: 20px;
+			color: #6b4e3d;
+		}
+		.cta-btn{
+			display: inline-block;
+			padding: 15px 25px;
+			background-color: #d2691e;
+			color: #fff;
+			border-radius: 8px;
+			text-decoration: none;
+			box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+			transition: all 0.3s ease;
+			font-size: 28px;
+			font-family: 'Berkshire Swash', cursive;
+		}
+		.cta-btn:hover{
+			background-color: #a0522d;
+			transform: scale(1.1);
+		}
+		.promo{
+			background-color: #fff3e6;
+			border-radius: 10px;
+			padding: 15px;
+			margin: 20px;
+			text-align: center;
+			animation: slide-in 1s ease forwards;
+		}
+		@keyframes slide-in{
+			from {transform: translateY(20px);opacity: 0;}
+			to{transform: translateY(0);opacity: 1;}
+		}
+		.promo h2{
+			color: #d2691e;
+			font-size: 45px;
+			font-family: "Berkshire Swash", cursive;
+		}
+		.promo p{
+			color: #4b2e17;
+			font-weight: bold;
+			font-size: 20px;
+		}
+		.featured, .menu, .testimonials, .about, .newsletter{
+			margin: 20px;
+			padding: 15px;
+			border-radius: 10px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		.featured:hover,.menu:hover,.testimonials:hover,.about:hover,.newsletter:hover{
+			transform: scale(1.01);
+			box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+		}
+		.featured h2, .menu h2, .testimonials h2, .about h2, .newsletter h2{
+			text-align: center;
+			color: #8b4513;
+			font-size: 24px;
+			padding-bottom: 5px;
+			border-bottom: 2px solid #d2691e;
+			margin-bottom: 10px;
+			font-size: 45px;
+			font-family: 'Berkshire Swash',cursive;
+		}
+		.featured p{
+			font-size: 18px;
+		}
+		.menu-item{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 10px 0;
+		}
+		.menu-item img{
+			width: 140px;
+			height: 140px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+		}
+		.menu-item div{
+			flex-grow: 1;
+			margin-left: 10px;
+			color: #4b2e17;
+		}
+		.menu-item div p{
+			font-size: 22px;
+		}
+		.order-btn{
+			background-color: #d2691e;
+			color: #fff;
+			padding: 12px 20px;
+			border-radius: 8px;
+			text-decoration: none;
+			font-size: 25px;
+			transition: background 0.3s ease;
+			font-family: 'Berkshire Swash', cursive;
+		}
+		.order-btn:hover{
+			background-color: #a0522d;
+			transform: scale(1.1);
+		}
+		.testimonial-item{
+			margin: 10px 0;
+			text-align: center;
+		}
+		.testimonial-item p{
+			font-style: italic;
+			color: #4b2e17;
+			font-size: 20px;
+		}
+		.testimonial-item span{
+			display: block;
+			margin-top: 5px;
+			font-weight: bold;
+			color: #8b4513;
+		}
+		.about p{
+			color: #4b2e17;
+			line-height: 1.6;
+			font-size: 20px;
+		}
+		.newsletter p{
+			color: #4b2e17;
+			text-align: center;
+			margin-bottom: 10px;
+			font-size: 20px;
+		}
+		.newsletter input[type="email"]{
+			width: 90%;
+			padding: 12px;
+			border-radius: 10px;
+			border: 2px solid #d2691e;
+			transition: border-color 0.3s ease;
+			font-size: 20px;
+		}
+		.newsletter input[type="email"]:focus{
+			border-color: #a0522d;
+			outline: none;
+		}
+		.newsletter button {
+			padding: 14px 20px;
+			background-color: #d2691e;
+			color: #fff;
+			border-radius: 8px;
+			border: none;
+			margin-top: 12px;
+			transition: background 0.3s ease;
+			font-size: 24px;
+			font-family: 'Berkshire Swash', cursive;
+		}
+		.newsletter button:hover{
+			background-color: #a0522d;
+		}
+		footer{
+			text-align: center;
+			padding: 10px;
+			background-color: #f4a460;
+			color: #fff;
+			border-bottom-left-radius: 10px;
+			border-bottom-right-radius: 10px;
+			font-size: 14px;
+		}
+		footer a{
+			color: #ffe4b5;
+		}
+		@media (min-width:1000px){
+			body{
+				justify-content: space-between;
+				padding: 0 20px;
+			}
+			wrapper{
+				max-width: 1000px;
+				margin: 40px auto;
+			}
+			header{
+				font-size: 60px;
+				padding: 30px;
+			}
+			nav{
+				flex-direction: row;
+				justify-content: center;
+				gap: 20px;
+			}
+			nav a{
+				font-size: 28px;
+				padding: 15px 25px;
+			}
+			.hero h1{
+				font-size: 55px;
+			}
+			.hero p{
+				font-size: 24px;
+			}
+			.cta-btn{
+				font-size: 32px;
+			}
+			.promo h2,
+			.featured h2,
+			.menu h2,
+			.testimonials h2,
+			.about h2,
+			.newsletter h2{
+				font-size: 50px;
+			}
+			.promo p,
+			.menu-item div p,
+			.about p,
+			.testimonial-item p,
+			.newsletter p{
+				font-size: 24px;
+			}
+			.menu-item{
+				gap: 20px;
+			}
+			.menu-item p{
+				font-size: 18px;
+			}
+			.menu-item img{
+				width: 160px;
+				height: 160px;
+			}
+			.order-btn{
+				font-size: 22px;
+				padding: 10px 15px;
+			}
+			.about p{
+				font-size: 18px;
+			}
+			.newsletter input[type="email"]{
+				width: 60%;
+				font-size: 22px;
+			}
+			.newsletter button{
+				font-size: 28px;
+			}
+			.newsletter p{
+				font-size: 18px; 
+			}
+			footer {
+				font-size: 16px;
+			}
+			section {
+				width: 42.5%;
+				display: inline-block;
+				vertical-align: top;
+				margin-left: 10px;
+				margin-right: 10px;
+			}
+			
+		}
+		
+	</style>
+</head>
+
+<body>
+	<style>
+body {
+  background-image: url('cookie background.jpg');
+}
+</style>
+	<wrapper>
+		<div class="banner">
+		<span> 🍪Limited Time Offer: Buy 3 Cookies, Get 1 Free!🍪 Sweet Batch Cookie Shop 🍪 Try Our Fall Edition Cookies 🍪 Indulge in Deliciousness! 🍪</span>
+		</div>
+	<img src="Sweet-Batch-Logo.jpg" alt="Logo" height="200">
+		<div class="photo-gallery-banner">
+		<div class="gallery">
+			<img src="chocolatechip.jpg" alt="Chocolate Chip Cookie">
+			<img src="OatmealRaisin.jpg" alt="Oatmeal Raisin Cookie">
+			<img src="DarkChocolate.jpg" alt="Dark Chocolate Cookie">
+			<img src="ChocChipWalnut.jpg" alt="Chocolate Chip Walnut">
+			<img src="DarkChocPeanut.jpg" alt="Dark Chocolate Peanut Cookie">
+			<img src="CaramelCocoChocChip.jpg" alt="Caramel Coco Chocolate Chip Cookie">
+			<img src="DarkChocPeppermint.jpg" alt="Dark Chocolate Peppermint Cookie">
+			<img src="fallchocolate.jpg" alt="Fall Chocolate Cookie">
+			<img src="VeganWalnut.jpg" alt="Vegan Walnut Cookie">
+			<img src="chocolatechip.jpg" alt="Chocolate Chip Cookie">
+			<img src="OatmealRaisin.jpg" alt="Oatmeal Raisin Cookie">
+			<img src="DarkChocolate.jpg" alt="Dark Chocolate Cookie">
+			<img src="ChocChipWalnut.jpg" alt="Chocolate Chip Walnut">
+			<img src="DarkChocPeanut.jpg" alt="Dark Chocolate Peanut Cookie">
+			<img src="CaramelCocoChocChip.jpg" alt="Caramel Coco Chocolate Chip Cookie">
+			<img src="DarkChocPeppermint.jpg" alt="Dark Chocolate Peppermint Cookie">
+			<img src="fallchocolate.jpg" alt="Fall Chocolate Cookie">
+			<img src="VeganWalnut.jpg" alt="Vegan Walnut Cookie">
+			</div>
+		</div>
+	<header>Sweet Batch Cookie Shop</header>
+		<nav>
+		<a href="#home">Home</a>
+		<a href="#menu">Menu</a>
+		<a href="#order">Order</a>
+		<a href="#contact">Contact</a>	
+		</nav>
+	<section class="hero" id="home">
+	<img src="cookies.jpg" alt="Cookies" height="300">
+	<h1>Freshly Baked Every Day!</h1>
+	<p>Try our rich, gooey double chunky cookies, a fan favorite!</p>
+	<a href="#menu" class="cta-btn">Browse Our Cookies</a>
+	</section>
+		<section class="featured">
+			<h2>Cookies of the Month: Fall Edition</h2>
+			<img src="FallCookie.jpg" alt="Fall Cookies" height="300">
+			<p>Indulge in our special assortment of Fall Cookies, packed with deep flavors of ginger, nutmeg, clove, cinnamon and molasses — because pumpkin isn't the only fall flavor to love. </p>
+			<a href="#order" class="order-btn">Order Now</a>
+		</section>
+			<section class="menu" id="menu">
+			<h2>Our Cookie Selection</h2>
+		<div class="menu-item">
+		<img src="chocolatechip.jpg" alt="Chocolate Chip" height="300">
+			<div>
+		<p>Chocolate Chip</p>
+		<p>$1.50</p>
+				</div>
+			<a href="#order" class="order-btn">Order</a>
+		</div>
+		<div class="menu-item">
+		<img src="OatmealRaisin.jpg" alt="Oatmeal Raisin" height="300">
+			<div>
+			<p>Oatmeal Raisin</p>
+				<p>$1.20</p>
+			</div>
+			<a href="#order" class="order-btn">Order</a>
+		</div>
+		<div class="menu-item">
+		<img src="DarkChocolate.jpg" alt="Dark Chocolate" height="300">
+			<div>
+			<p>Dark Chocolate</p>
+				<p>$1.30</p>
+			</div>
+			<a href="#order" class="order-btn">Order</a>
+		</div>
+		</section>
+		<section class="testimonials">
+			<h2>What Our Customers Say</h2>
+			<div class="testimonial-item">
+			<p>"Best cookies I've ever had! Always fresh and delicious."</p>
+				<span>- Sarah J.</span>
+			</div>
+			<div class="testimonial-item">
+			<p>"Perfectly baked and so many flavors to choose from."</p>
+				<span>- Mike R.</span>
+			</div>
+		</section>
+		<section class="about" id="about">
+		<h2>About Us</h2>
+			<p>We are family-owned cookie shop dedicated to bringing you the best homemade cookies with all-natural ingredients. Baked with love and crafted for every cookie lover out there!</p>
+		</section>
+		<section class="promo">
+		<h2>Special Offer!</h2>
+		<p>Buy 3, Get 1 Free - Limited Time Only!</p>
+		</section>
+		<section class="newsletter">
+		<h2>Stay Updated</h2>
+			<p>Sign up for our newsletter to get the latest news and exclusive deals.</p>
+			<form>
+			<input type="email" placeholder="Your Email">
+				<button type="submit">Subscribe</button>
+			</form>
+		</section>
+		<footer>
+		<p>&copy;2024 Sweet Batch Cookie Shop</p>
+			<p>Follow us on <a href="#">Instagram</a></p>
+			<p>© 2024, Maysa Watts. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+		</footer>
+	</wrapper>
+</body>
+</html>
