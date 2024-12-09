@@ -1,0 +1,275 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+	<style>
+		body {
+			margin: 0;
+			font-family: 'Orbitron', sans-serif;
+			color: #0ff;
+			background: #000;
+		}
+		
+		@keyframes text-glitch {
+			0% { text-shadow: 2px 2px 5px #f0f, -2px -2px 5px #0ff; }
+			25% { text-shadow: -3px -3px 5px #ff0, 3px 3px 5px #f00; }
+			50% { text-shadow: 4px 4px 10px #0ff, -4px -4px 10px #f0f; }
+			75% { text-shadow: -5px -5px 15px #f00, 5px 5px 15px #ff0; }
+			100% { text-shadow: 2px 2px 5px #f0f, -2px -2px 5px #0ff; }
+		}
+		
+		body p {
+			animation: text-glitch 2s infinite;
+		}
+		
+		@keyframes glow-pulse {
+			0%, 100% { text-shadow: 0 0 10px #0ff, 0 0 20px #08f, 0 0 30px #08f; }
+			50% { text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff; }
+		}
+		
+		h1 {
+			font-size: 3rem;
+			color: #0ff;
+			margin-bottom: 10px;
+			animation: glow-pulse 2s infinite;
+		}
+		
+		h2 {
+			font-size: 2rem;
+			color: #08f;
+			margin-bottom: 10px;
+			animation: glow-pulse 2s infinite;
+		}
+		
+		.logo-banner {
+			position: relative;
+			width: 100%;
+			height: 60vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #111;
+			overflow: hidden;
+		}
+		
+		.logo-banner img {
+			width: auto;
+			max-width: 90%;
+			height: auto;
+			max-height: 100%;
+			filter: drop-shadow(0 0 20px cyan);
+		}
+		
+		.video-banner {
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+			background: rgba(0, 0, 0, 0.5);
+			border: 10px solid #333;
+			border-radius: 20px;
+			box-shadow: 0 0 15px cyan, inset 0 0 10px #08f;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		.video-banner h1 {
+			position: absolute;
+			top: 10px;
+			z-index: 10;
+			background-color: rgba(0, 0, 0, 0.8);
+			padding: 10px 20px;
+			border-radius: 10px;
+		}
+		
+		.video-banner iframe {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	
+		.homepage-bar {
+			background-color: rgba(0, 0, 0, 0.8);
+			position: sticky;
+			top: 0;
+			z-index: 100;
+			text-align: center;
+		}
+		
+		.homepage-bar ul {
+			list-style: none;
+			margin: 0;
+			padding: 10px;
+			display: flex;
+			justify-content: center;
+			gap: 20px;
+			font-size: 1.5rem;
+		}
+		
+		.homepage-bar a{
+			text-decoration: none;
+			padding: 15px 20px;
+			border-radius: 5px;
+			font-weight: bold;
+			color: #0ff;
+		}
+		
+		.homepage-bar a:nth-child(1) {
+			background-color: #111;
+			font-style: italic;
+		}
+		
+		.homepage-bar a:nth-child(2) {
+			background-color: #222;
+			text-transform: uppercase;
+		}
+		
+		.homepage-bar a:nth-child(3) {
+			background-color: #333;
+			font-weight: 700;
+		}
+		
+		.homepage-bar a:nth-child(4) {
+			background-color: #444;
+			letter-spacing: 2px;
+		}
+		
+		.homepage-bar a:hover {
+			background-color: #0ff;
+			color: #000;
+			transform: scale(1.1);
+		}
+		
+		main {
+			padding: 20px;
+			text-align: center;
+		}
+		
+		#trailer iframe {
+			margin-top: 20px;
+			border: 5px solid #f4a261;
+			border-radius: 10px;
+		}
+		
+		#synopsis {
+			background-color: rgba(0, 0, 0, 0.6);
+			padding: 30px;
+			margin: 30px auto;
+			border-radius: 10px;
+			width: 80%;
+			color: #0ff;
+			text-shadow: 0 0 10px #08f;
+			animation: text-glitch 2s infinite;
+		}
+		
+		.character-grid {
+			display: flex;
+			justify-content: center;
+			gap: 30px;
+			margin: 30px 0;
+		}
+		
+		.character-card {
+			background-color: rgba(0, 0, 0, 0.8);
+			padding: 20px;
+			border-radius: 10px;
+			text-align: center;
+			width: 180px;
+			box-shadow: 0 0 15px #08f;
+		}
+		
+		.character-card img {
+			width: 100%;
+			border-radius: 10px;
+		}
+		
+		footer {
+			text-align: center;
+			padding: 10px;
+			background-color: rgba(0, 0, 0, 0.8);
+			color: #0ff;
+		}
+	</style>
+</head>
+	<wrapper>
+<body>
+	<div class="logo-banner">
+	<img src="logo.png" alt="WALL·E Logo">
+	</div>
+	
+	<div class="video-banner">
+	<iframe 
+		src="https://archive.org/embed/youtube-PhRPAhmcdOY?autoplay=1&loop=1&mute=1"
+		allowfullscreen>
+	</iframe>	
+	</div>
+	
+	<nav class="homepage-bar">
+	<ul>
+		<li><a href="#home">Home</a></li>
+		<li><a href="#trailer">Trailer</a></li>
+		<li><a href="#synopsis">Synopsis</a></li>
+		<li><a href="#characters">Characters</a></li>
+		</ul>
+	</nav>
+	
+	<main>
+	<section id="trailer">
+		<h1>WALL·E Trailer</h1>
+		<iframe src="https://archive.org/embed/youtube-PhRPAhmcdOY" width="640" 
+		height="360" 
+		allowfullscreen>
+		</iframe>
+		</section>
+		
+		<section id="synopsis">
+		<h1>Synopsis</h1>
+			<p>
+			WALL·E, the last robot left on an uninhabitable Earth, spends his days tidying up the planet, one piece of trash at a time. But when a sleek new robot, EVE, arrives on a scanning mission, WALL·E discovers a new purpose in life and embarks on an epic journey across the galaxy.
+			</p>
+		</section>
+
+		<section id="characters">
+		<h1>Meet the Characters</h1>
+			<div class="character-grid">
+			<div class="character-card">
+				<img src="Wall-E.jpg" alt="WALL·E">
+				<h2>WALL·E</h2>
+				<p>A quirky and endearing trash-compacting robot with a curious and playful personality, whose devotion to cleaning Earth leads to a heartwarming journey of love and heroism.</p>
+				</div>
+				<div class="character-card">	
+				<img src="Eve.jpg" alt="EVE">
+					 <h2>EVE</h2>
+					<p>A sleek and determined probe robot with advanced capabilities, who develops compassion and a deep connection with WALL-E while fulfilling her mission to find plant life.</p>
+				</div>
+				<div class="character-card">
+				<img src="Burn-E.jpg" alt="Burn-E">
+				<h2>Burn·E</h2>
+				<p>A diligent and slightly unlucky repair bot whose single-minded focus on fixing a broken light creates a humorous subplot.</p>
+				</div>
+					<div class="character-card">
+					<img src="Auto.jpg" alt="Auto">
+						<h2>Auto</h2>
+						<p>The Axiom's autopilot, a cold and calculating AI committed to its directive, becoming the film’s main antagonist.</p>
+					</div>
+				<div class="character-card">
+				<img src="Captain.jpg" alt="Captain">
+					<h2>Captain B. McCrea</h2>
+					<p>The captain of the Axiom who grows into a determined leader, rediscovering his humanity and sense of purpose.</p>
+				</div>
+			</div>
+		</section>
+		
+	<footer>
+	<p>© 2024, Maysa Watts. This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</p>
+	</footer>
+	</main>
+	</body>
+	</wrapper>
+</html>
